@@ -1,0 +1,12 @@
+[package]
+name = "tokio-uio"
+version = "0.1.0"
+authors = ["nanpuyue <nanpuyue@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+futures = "0.1.26"
+libc = "0.2.51"
+mio = "0.6.16"
+tokio-io = "0.1.12"
+tokio-reactor = "0.1.9"
