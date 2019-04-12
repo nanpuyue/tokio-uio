@@ -21,10 +21,11 @@ impl Uio {
     }
 
     pub fn enable_intrpts(&mut self) -> Result<()> {
-        match self.io.get_mut().write(&1u32.to_ne_bytes())? {
-            4 => Ok(()),
-            _ => unreachable!(),
-        }
+        self.io.get_mut().write_all(&1u32.to_ne_bytes())
+    }
+
+    pub fn disable_intrpts(&mut self) -> Result<()> {
+        self.io.get_mut().write_all(&0u32.to_ne_bytes())
     }
 }
 
