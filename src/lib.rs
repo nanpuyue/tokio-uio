@@ -18,6 +18,13 @@ impl Uio {
             io: PollEvented::new(uio),
         })
     }
+
+    pub fn enable_intrpts(&mut self) -> Result<()> {
+        match self.write(&1u32.to_ne_bytes())? {
+            4 => Ok(()),
+            _ => unreachable!(),
+        }
+    }
 }
 
 impl Read for Uio {
