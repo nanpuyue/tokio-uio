@@ -6,6 +6,7 @@ use tokio_io::{AsyncRead, AsyncWrite};
 use tokio_reactor::PollEvented;
 
 mod mio;
+mod stream;
 
 pub struct Uio {
     io: PollEvented<mio::Uio>,
